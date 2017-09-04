@@ -31,6 +31,7 @@ promise.then(
 // ecouter les evenements
 io.sockets.on('connection', function (socket) {
     console.log("un client est connecté");
+    // console.log(socket);
 
     socket.emit('monsocket', { hello: "world" });
   // socket.on('vote', function(msg){
@@ -57,24 +58,24 @@ app.use('/app', express.static('./app/'));
 // app.use('/css', express.static('./client/css'));
 
 // Add headers to allow CORS
-app.use(function (req, res, next) {
+// app.use(function (req, res, next) {
 
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', '*');
+//     // Website you wish to allow to connect
+//     res.setHeader('Access-Control-Allow-Origin', '*');
 
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+//     // Request methods you wish to allow
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+//     // Request headers you wish to allow
+//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
+//     // Set to true if you need the website to include cookies in the requests sent
+//     // to the API (e.g. in case you use sessions)
+//     res.setHeader('Access-Control-Allow-Credentials', true);
 
-    // Pass to next layer of middleware
-    next();
-});
+//     // Pass to next layer of middleware
+//     next();
+// });
 
 
 // je renvoie l'index.html
@@ -212,4 +213,3 @@ app.put('/api/liste/:id', function(req, res) {
     // res.send(200);
 
 });
-
