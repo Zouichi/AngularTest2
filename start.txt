@@ -1,0 +1,5 @@
+cd C:/xampp/htdocs/JavaScript/AngularTest2
+nodemon server.js
+
+cd c:'Program Files'/MongoDB/server/3.4/bin
+start mongod.exe --dbpath "/c/Users/ELEVE/Desktop/Développement/mongodata/db"
